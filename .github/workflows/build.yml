@@ -1,25 +1,25 @@
 name: CI Robot Test - Java Check
 
 on:
-	push:
-		branches:
-			- master
+  push:
+    branches:
+      - master
 
 jobs:
-	build:
-		runs-on:ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 1.코드 체크아웃(작업재료 가져오기)
+        uses:actions/checkout@v4
 
-	steps:
-		- name: 1.코드 체크아웃(작업재료 가져오기)
-		uses:actions/checkout@v4
+      - name: 2.JDK설치
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-		- name: 2.JDK설치
-		uses: actions/setup-java@v4
-		with:
-			distribution: 'temurin'
-			java-version: '17'
-
-		- name: 3.자바코드 컴파일 테스트
-		run:
-		java -version
-		echo "자바환경 설정 완료!"
+      - name: 3.자바코드 컴파일 테스트
+        run:
+          java -version
+         echo "자바환경 설정 완료!"
