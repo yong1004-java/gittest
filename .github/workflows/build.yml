@@ -22,6 +22,7 @@ jobs:
       - name: 3.자바코드 컴파일 테스트
         run:
           java -version
+
          echo "자바환경 설정 완료!"
 
       - name: 4.컴파일 테스트
