@@ -23,3 +23,9 @@ jobs:
         run:
           java -version
          echo "자바환경 설정 완료!"
+          javac
+
+      - name: 4.컴파일 테스트
+        run:
+          javac *.java
+         echo "클래스파일 컴파일 성공"
